@@ -50,7 +50,7 @@ Options:
   ```
 ### Display Lists
 ```
-  Usage: wl show [OPTIONS] [LIST]
+Usage: wl show [OPTIONS] [LIST]
 
 Arguments:
   [LIST]  List from which to display items
