@@ -21,7 +21,7 @@ Options:
   -h, --help     Print help
   -V, --version  Print version
 ```
-Help for the respective subcommands can be seen using the `help` subcommand and then the name of the command, (`wl help add`), or by using the `-h` option, (`wl add -h`)
+Help for the respective subcommands can be seen using the `help` subcommand and then the name of the command, `wl help add`, or by using the `-h` option, `wl add -h`
 The aliases, `n`, `a`, `s`, `r`, `d` and `se` can be used for each of the subcommands respectively.
 
 ### Create New Lists
