@@ -21,8 +21,8 @@ enum Commands {
     Add(Add),
 
     /// Display Lists/Items
-    #[clap(visible_alias = "s")]
-    Show(Show),
+    #[clap(visible_alias = "l")]
+    List(List),
 
     /// Get a Random Item
     #[clap(visible_aliases = ["r", "rand"])]
@@ -60,8 +60,8 @@ struct Add {
 }
 
 #[derive(Args, Debug)]
-#[command(group(ArgGroup::new("show").args(["list", "all_items"])))]
-struct Show {
+#[command(group(ArgGroup::new("list_group").args(["list", "all_items"])))]
+struct List {
     /// List from which to display items
     pub list: Option<String>,
 
@@ -157,9 +157,9 @@ pub fn cli_run(watchlists: &mut WatchList) -> Result<(), WatchListError> {
             }
             println!("Item(s) Added!");
         }
-        Commands::Show(show) => {
+        Commands::List(list) => {
             let all_lists = watchlists.list_get_all()?;
-            if show.all_items {
+            if list.all_items {
                 for list in all_lists {
                     // Index into watchlists cannot fail as the list_get_all method
                     // already returns all the keys of watchlists
@@ -171,7 +171,7 @@ pub fn cli_run(watchlists: &mut WatchList) -> Result<(), WatchListError> {
                     }
                 }
             // Display List Items
-            } else if let Some(l) = &show.list {
+            } else if let Some(l) = &list.list {
                 let items = watchlists.item_get_all(l)?;
                 wlist::list_display(items, l);
             // Display All List Titles
