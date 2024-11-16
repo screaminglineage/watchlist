@@ -11,7 +11,7 @@ Usage: wl <COMMAND>
 Commands:
   new     Create new Lists [aliases: n]
   add     Add new Items [aliases: a]
-  show    Display Lists/Items [aliases: s]
+  list    Display Lists/Items [aliases: l]
   random  Get a Random Item [aliases: r, rand]
   delete  Delete Lists/Items [aliases: d, del]
   search  Searches for Items in a list [aliases: se]
@@ -21,8 +21,9 @@ Options:
   -h, --help     Print help
   -V, --version  Print version
 ```
+
 Help for the respective subcommands can be seen using the `help` subcommand and then the name of the command, `wl help add`, or by using the `-h` option, `wl add -h`
-The aliases, `n`, `a`, `s`, `r`, `d` and `se` can be used for each of the subcommands respectively.
+The aliases, `n`, `a`, `l`, `r`, `d` and `se` can be used for each of the subcommands respectively.
 
 ### Create New Lists
 ```
@@ -50,7 +51,9 @@ Options:
   ```
 ### Display Lists
 ```
-Usage: wl show [OPTIONS] [LIST]
+Display Lists/Items
+
+Usage: wl list [OPTIONS] [LIST]
 
 Arguments:
   [LIST]  List from which to display items
