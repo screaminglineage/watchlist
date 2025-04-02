@@ -33,7 +33,7 @@ enum Commands {
     Delete(Delete),
 
     /// Searches for Items in a list
-    #[clap(visible_aliases = ["se"])]
+    #[clap(visible_aliases = ["s", "se"])]
     Search(Search),
 }
 
